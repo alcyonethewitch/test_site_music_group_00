@@ -1,0 +1,405 @@
+:root {
+    --primary-pink: #ff6b9d;
+    --accent-yellow: #ffd93d;
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
+    --text-color: #333;
+    --bg-light: #f8f9fa;
+    --transition-speed: 0.3s;
+}
+
+/* Reset и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Навигация */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+.nav-menu a:hover {
+    color: var(--primary-pink);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* Главная секция */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary-pink);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform var(--transition-speed);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Секция участниц */
+.members {
+    padding: 5rem 2rem;
+    background: var(--bg-light);
+}
+
+.members h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.member-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed);
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+}
+
+.member-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.member-info h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.korean-name {
+    color: var(--primary-pink);
+    margin-bottom: 0.5rem;
+}
+
+.position {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Секция дискографии */
+.discography {
+    padding: 5rem 2rem;
+}
+
+discography h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.album-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed);
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.album-info {
+    padding: 1.5rem;
+}
+
+.album-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.release-date {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.track-list {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.track-list li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* О группе */
+.about {
+    padding: 5rem 2rem;
+    background: var(--bg-light);
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text {
+    margin-bottom: 3rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--primary-pink);
+    margin-bottom: 1rem;
+}
+
+/* Кнопка "Наверх" */
+#scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--primary-pink);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color var(--transition-speed);
+}
+
+#scroll-top:hover {
+    background: var(--accent-yellow);
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.social-links {
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--primary-pink);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--text-color);
+        position: relative;
+        transition: background var(--transition-speed);
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: var(--text-color);
+        transition: transform var(--transition-speed);
+    }
+
+    .hamburger::before {
+        top: -8px;
+    }
+
+    .hamburger::after {
+        bottom: -8px;
+    }
+
+    .nav-toggle.active .hamburger {
+        background: transparent;
+    }
+
+    .nav-toggle.active .hamburger::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle.active .hamburger::after {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .members-grid,
+    .albums-grid {
+        grid-template-columns: 1fr;
+    }
+}
