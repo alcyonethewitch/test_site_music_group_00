@@ -23,12 +23,50 @@ html {
 body {
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #0f2027 0%, #2c5364 40%, #662d8c 100%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    font-family: 'Montserrat';
+    /* Убираем лишний градиент! */
+    background: #141e30; /* fallback, темный космос */
+    color: #fff;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
     position: relative;
     overflow-x: hidden;
+}
+
+.navbar {
+    width: 100%;
+    background: linear-gradient(90deg, #283e51 0%, #485563 100%);
+    /* или просто background: #283e51; */
+    color: #fff;
+    padding: 24px 0 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+}
+
+.loona-logo {
+    height: 48px;
+    margin-right: 24px;
+}
+
+/* Градиентный космический фон только для основного контента */
+main {
+    background: linear-gradient(135deg, #0f2027 0%, #2c5364 40%, #662d8c 100%);
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    padding-top: 0; /* если нужно */
+}
+
+/* Слой для canvas со звездами */
+#star-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
 }
 #star-canvas {
     position: fixed;
