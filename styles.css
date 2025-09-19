@@ -193,14 +193,12 @@ discography h2 {
 }
 
 .album-cover img {
-    width: 160px;
-    height: 160px;
+    width: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 16px;
 }
-
-
 .album-info {
     padding: 1.5rem;
 }
