@@ -1,4 +1,23 @@
-:root {
+
+
+/* Навигация */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}:root {
     --primary: #EDC7FF;
     --accent: #FFFFC7;
     --gradient-start: #352986;
@@ -14,25 +33,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
+
+/* Черный текст на карточках альбомов и участниц */
 .album-card,
 .album-card * {
     color: #000 !important;
 }
-/* Градиентный космический фон */
-body {
-    min-height: 100vh;
-    margin: 0;
-    /* Убираем лишний градиент! */
-    background: #141e30; /* fallback, темный космос */
-    color: #fff;
-    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-    position: relative;
-    overflow-x: hidden;
+.member-card,
+.member-card * {
+    color: #000 !important;
 }
+
 /* Градиентный космический фон */
 body {
     min-height: 100vh;
@@ -111,69 +125,63 @@ body > *:not(#star-canvas) {
 main {
     position: relative;
     z-index: 1;
-}
-}
-
-.loona-logo {
-    height: 48px;
-    margin-right: 24px;
+    background: transparent;
+    padding-bottom: 0 !important;
+    min-height: unset;
 }
 
-/* Градиентный космический фон только для основного контента */
-main {
-    background: linear-gradient(135deg, #0f2027 0%, #2c5364 40%, #662d8c 100%);
-    min-height: 100vh;
-    position: relative;
-    z-index: 1;
-    padding-top: 0; /* если нужно */
+.footer {
+    background: #333;
+    color: white;
+    padding: 2rem 2rem 1rem 2rem;
+    text-align: center;
+    margin-top: 0;
+    border: none;
+}
+.footer:empty {
+    display: none !important;
 }
 
-/* Слой для canvas со звездами */
-#star-canvas {
+/* Стили для полноэкранного просмотра фото */
+.image-modal {
+    display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    pointer-events: none;
-    display: block;
-}
-#star-canvas {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    pointer-events: none;
-    display: block;
-}
-body > *:not(#star-canvas) {
-    position: relative;
-    z-index: 1;
-}
-}
-}
-}
-}
-
-/* Навигация */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92);
+    justify-content: center;
     align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s;
+}
+.image-modal.active {
+    display: flex;
+    opacity: 1;
+}
+.image-modal img {
+    max-width: 96vw;
+    max-height: 92vh;
+    border-radius: 14px;
+    box-shadow: 0 0 40px #0008;
+    background: #222;
+}
+.image-modal .close-modal {
+    position: absolute;
+    top: 32px;
+    right: 40px;
+    color: #fff;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2100;
+    transition: color 0.2s;
+}
+.image-modal .close-modal:hover {
+    color: #ffb4e0;
 }
 
-.nav-brand {
-    display: flex;
-    align-items: center;
-}
+/* Остальной ваш CSS (navbar, hero, members, albums, etc.) идёт ниже без изменений... */
 
 .nav-logo {
     height: 40px;
