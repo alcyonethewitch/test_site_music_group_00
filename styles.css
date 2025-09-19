@@ -30,18 +30,85 @@ body {
     position: relative;
     overflow-x: hidden;
 }
-
-.navbar {
-    width: 100%;
-    background: linear-gradient(90deg, #283e51 0%, #485563 100%);
-    /* или просто background: #283e51; */
+/* Градиентный космический фон */
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #0f2027 0%, #2c5364 40%, #662d8c 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: #fff;
-    padding: 24px 0 18px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
     position: relative;
+    overflow-x: hidden;
+    padding-top: 0;
+}
+
+/* Слой для canvas со звёздами */
+#star-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+}
+
+/* Контент выше слоя со звездами */
+body > *:not(#star-canvas) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Заголовок LOONA в самом верху */
+.loona-header {
+    width: 100%;
+    min-height: 200px;
+    padding: 54px 0 36px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.loona-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-shadow: 0 0 14px #4a6bdc, 0 2px 12px #000a;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.loona-header .subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #e5d6fc;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    text-shadow: 0 0 8px #8e44ad, 0 1px 4px #000c;
+}
+
+.loona-header .desc {
+    font-size: 1.2rem;
+    color: #fff;
+    opacity: 0.94;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    text-shadow: 0 0 10px #000, 0 1px 2px #0007;
+    margin-top: 4px;
+    max-width: 600px;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
 }
 
 .loona-logo {
