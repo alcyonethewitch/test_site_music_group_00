@@ -1,8 +1,8 @@
 :root {
-    --primary-pink: #ff6b9d;
-    --accent-yellow: #ffd93d;
-    --gradient-start: #667eea;
-    --gradient-end: #764ba2;
+    --primary: #EDC7FF;
+    --accent: #FFFFC7;
+    --gradient-start: #352986;
+    --gradient-end: #7070DB;
     --text-color: #333;
     --bg-light: #f8f9fa;
     --transition-speed: 0.3s;
