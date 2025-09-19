@@ -87,3 +87,27 @@ window.addEventListener('load', () => {
         });
     });
 });
+window.addEventListener('DOMContentLoaded', () => {
+    const STAR_COUNT = 200;
+    const canvas = document.getElementById('star-canvas');
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        drawStars();
+    }
+    function drawStars() {
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < STAR_COUNT; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const radius = Math.random() * 1.2 + 0.3;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255,255,255,' + (Math.random()*0.5+0.5) + ')';
+            ctx.fill();
+        }
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+});
