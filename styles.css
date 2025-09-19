@@ -18,7 +18,10 @@
 html {
     scroll-behavior: smooth;
 }
-
+.album-card,
+.album-card * {
+    color: #000 !important;
+}
 /* Градиентный космический фон */
 body {
     min-height: 100vh;
