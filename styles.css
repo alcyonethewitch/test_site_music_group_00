@@ -19,29 +19,32 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Градиентный космический фон */
 body {
     min-height: 100vh;
     margin: 0;
     background: linear-gradient(135deg, #0f2027 0%, #2c5364 40%, #662d8c 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    color: #fff;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
-    /* Можно добавить "звёзды" поверх градиента с помощью псевдоэлемента: */
-    position: relative;
+     /* Белый текст по всему сайту */
+  
 }
-body::before {
-    content: '';
+
+/* Слой для canvas со звёздами */
+#star-canvas {
     position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 0;
-    inset: 0;
     pointer-events: none;
-    background-image:
-        radial-gradient(white 1px, transparent 1px),
-        radial-gradient(white 1px, transparent 1px);
-    background-size: 100px 100px, 200px 200px;
-    background-position: 0 0, 50px 50px;
-    opacity: 0.35;
+}
+
+/* Контент выше слоя со звездами */
+body > *:not(#star-canvas) {
+    position: relative;
+    z-index: 1;
+}
 }
 }
 
