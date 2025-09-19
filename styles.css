@@ -26,10 +26,10 @@ body {
     background: linear-gradient(135deg, #0f2027 0%, #2c5364 40%, #662d8c 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
-     /* Белый текст по всему сайту */
-  
+    font-family: 'Montserrat';
+    position: relative;
+    overflow-x: hidden;
 }
-
 /* Слой для canvas со звёздами */
 #star-canvas {
     position: fixed;
@@ -39,11 +39,11 @@ body {
     z-index: 0;
     pointer-events: none;
 }
-
 /* Контент выше слоя со звездами */
 body > *:not(#star-canvas) {
     position: relative;
     z-index: 1;
+}
 }
 }
 }
