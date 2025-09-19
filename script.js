@@ -115,4 +115,25 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
+    <script>
+document.querySelectorAll('img').forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', function() {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    modal.classList.add('active');
+    modalImg.src = this.src;
+  });
+});
+document.getElementById('close-image-modal').onclick = function() {
+  document.getElementById('image-modal').classList.remove('active');
+  document.getElementById('modal-img').src = '';
+};
+document.getElementById('image-modal').onclick = function(e) {
+  if (e.target === this) {
+    this.classList.remove('active');
+    document.getElementById('modal-img').src = '';
+  }
+};
+</script>
 });
