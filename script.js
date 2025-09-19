@@ -1,3 +1,6 @@
+.member-card {
+    color: #000;
+}
 // Элементы DOM
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
