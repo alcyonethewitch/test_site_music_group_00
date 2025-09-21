@@ -1,27 +1,15 @@
 
 
-/* Навигация */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(252,15,192);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+
 
 .nav-brand {
     display: flex;
     align-items: center;
 }:root {
-    --primary: #EDC7FF;
-    --accent: #FFFFC7;
-    --gradient-start: #352986;
-    --gradient-end: #7070DB;
+    --primary: #fc0fc0;
+    --accent: #fc0fc0;
+    --gradient-start: #fc0fc0;
+    --gradient-end: #fc0fc0;
     --text-color: #333;
     --bg-light: #f8f9fa;
     --transition-speed: 0.3s;
